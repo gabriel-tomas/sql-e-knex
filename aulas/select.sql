@@ -1,0 +1,1 @@
+select u.id, r.id from users as u, roles as r;
