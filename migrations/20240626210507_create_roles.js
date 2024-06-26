@@ -5,7 +5,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable('roles', (table) => {
     table.increments('id').primary();
-    table.string('name', 10).notNullable();
+    table.string('name', 30).notNullable().unique();
   });
 };
 
