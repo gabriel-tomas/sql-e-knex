@@ -1,6 +1,6 @@
 const knex = require('../config/database');
 
-const knexLeftJoin = knex('users as u')
+const knexRightJoin = knex('users as u')
   .select('u.id as uid',
     'p.id as pid',
     'p.bio as bio',
@@ -8,9 +8,9 @@ const knexLeftJoin = knex('users as u')
   )
   .rightJoin('profiles as p', 'u.id', 'p.id');
 
-console.log(knexLeftJoin.toString());
+console.log(knexRightJoin.toString());
 
-knexLeftJoin
+knexRightJoin
   .then(res => console.log(res))
   .catch(e => console.log(e.message))
   .finally(() => knex.destroy());
