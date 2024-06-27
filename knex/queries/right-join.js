@@ -6,7 +6,7 @@ const knexLeftJoin = knex('users as u')
     'p.bio as bio',
     'u.first_name as first_name'
   )
-  .leftJoin('profiles as p', 'u.id', 'p.id');
+  .rightJoin('profiles as p', 'u.id', 'p.id');
 
 console.log(knexLeftJoin.toString());
 
